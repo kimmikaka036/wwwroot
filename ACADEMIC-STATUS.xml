@@ -1,0 +1,28 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<stateMachine id ="2" name ="Laboratory Room">
+    <initial id="initial1">
+        <transition event="GPA more than 2.00" target="Normal"/>
+    </initial>
+    <state id="Normal">
+         <transition event="GPA less than 1.00-1.99 in the first semester" target="Critical"/>
+         <transition event="GPA less than 2.00 when completing 2 semesters" target="Pro1"/>
+    </state>
+    <state id="Critical">
+        <transition event="GPA less than 2.00 when completing 2 semesters" target="Pro1"/>
+        <transition event="Pass" target="Normal"/>
+    </state>
+    <state id="Pro1">
+        <transition event="GPA less than 2.00" target="Pro2"/>
+        <transition event="Pass" target="Normal"/>
+    </state>
+    <state id="Pro2">    
+        <transition event="GPA less than 2.00" target="Pro3"/>
+        <transition event="Pass" target="Normal"/>
+    </state>
+    <state id="Pro3">
+        <transition event="Retire" target="final1"/>
+        <transition event="Pass" target="Normal"/>
+    </state>
+    <final id="final1">
+    </final>
+</stateMachine>

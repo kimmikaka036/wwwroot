@@ -1,0 +1,32 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<stateMachine id ="2" name ="SIS">
+    <initial id="initial1">
+        <transition event="Sign in" target="Login"/>
+    </initial>
+    <state id="Login">
+         <transition event="Select Menu" target="About Finance"/>
+    </state>
+    <state id="About Finance">
+        <transition event="Select Menu" target="Payment"/>
+    </state>
+    <state id="Payment">
+        <transition event="Select semester/Education Year" target="Tuition Fee"/>
+    </state>
+    <state id="Tuition Fee">
+        <transition event="Show" target="New Balance"/>
+    </state>
+    <state id="New Balance">
+        <transition event="Print" target="Bill Payment"/>
+        <transition event="Click" target="Direct Pay"/>
+    </state>
+    <state id="Bill Payment">
+        <transition event="Payment" target="final1"/>
+    </state>
+    <state id="Direct Pay">
+        <transition event="Payment" target="final2"/>
+    </state>
+    <final id="final1">
+    </final>
+     <final id="final2">
+    </final>
+</stateMachine>
